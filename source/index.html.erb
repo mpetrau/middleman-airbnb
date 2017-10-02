@@ -13,16 +13,19 @@ title: Le Wagon - Welcome Home
     </div>
     <div class="container my-5">
       <div class="row">
-      <% 3.times do %>
+      <% data.flats.each do |owner, flat|%>
         <div class="col-xs-12 col-sm-4">
           <!-- insert <div class="card"> -->
-            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/shanghai');">
-            <div class="card-category">Popular</div>
+            <div class="card" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.2)), url('https://kitt.lewagon.com/placeholder/cities/<%= flat.city_slug %>');">
+            <div class="card-category"><%= flat.city_name  %></div>
             <div class="card-description">
-              <h2>Le Wagon Shanghai</h2>
-              <p>Very cool city, the best</p>
+              <h2><%= flat.name  %></h2>
+              <p><%= flat.description %></p>
+              <% flat.rating.times do %>
+                <i class="fa fa-star"></i>
+              <% end %>
             </div>
-            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/tgenaitay">
+            <img class="card-user" src="https://kitt.lewagon.com/placeholder/users/<%= owner %>">
             <a class="card-link" href="#" ></a>
           </div>
         </div>

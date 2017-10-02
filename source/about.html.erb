@@ -5,11 +5,12 @@ title: Le Wagon - Middleman - About
   <div class="content">
     <h1>This template is built with <i class="fa fa-heart"></i> by</h1>
     <div class="list-inline">
-      <% %w(mpetrau papillard).each do |user| %>
+      <% data.users.each do |user, info| %>
         <li class="list-inline-item mx-2">
-          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{user}", class: "rounded-circle" %>
-          <% link_to "https://github.com/#{user}" do %>
-            <h5 class="mt-2"><i class="fa fa-github"><strong> <%= user %></strong></i></h5>
+          <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{info.github_nickname}", class: "rounded-circle" %>
+          <h5 class="mt-2"> <%= info.name  %></h5>
+          <% link_to "https://github.com/#{info.github_nickname}" do %>
+            <p class="mt-2"><i class="fa fa-github"><strong> <%= info.github_nickname %></strong></i></p>
           <% end %>
          </li>
       <% end %>
