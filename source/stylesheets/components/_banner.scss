@@ -21,3 +21,11 @@
     margin-bottom: 30px;
   }
 }
+
+.banner-flat {
+  height: 30vh;
+  background-size: cover !important;
+  img {
+    height: 100%;
+  }
+}

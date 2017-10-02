@@ -1,0 +1,73 @@
+---
+title: Le Wagon - Flat
+---
+
+<% flat = data.flats[owner] %>
+
+<div class="banner" style="background-image: linear-gradient(-225deg, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.3) 50%), url('<%= image_path "https://kitt.lewagon.com/placeholder/cities/#{flat.city_slug}" %>'); height: 40vh; background-position: center;">
+</div>
+<div class="container d-flex justify-content-start my-5">
+  <div class="profile text-center">
+    <%= image_tag "https://kitt.lewagon.com/placeholder/users/#{owner}", class: "avatar-large" %>
+    <p><%= owner %></p>
+  </div>
+  <div class="flat ml-5">
+    <h5><%= flat.description %></h5>
+    <p><%= flat.city_name %></p>
+    <% flat.rating.times do %>
+      <i class="fa fa-star"></i>
+    <% end %>
+  </div>
+  <div class="booking ml-auto p-3 bg-light">
+    <h5>Book this flat</h5>
+    <form>
+      <div class="form-row my-2">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Check-in">
+        </div>
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Check-out">
+        </div>
+      </div>
+      <div class="form-row my-2">
+        <div class="col">
+        <select class="custom-select w-100">
+          <option value="1">One guest</option>
+          <option value="2">Two guests</option>
+          <option value="3">Three guests</option>
+        </select>
+      </div>
+      </div>
+      <button type="submit" class="w-100 btn btn-primary my-2">Book with us</button>
+    </form>
+  </div>
+</div>
+<div class="wrapper bg-secondary text-light">
+  <div class="container py-5">
+    <h5>About this flat</h5>
+    <p>This one bedroom studio lodges 2 people (there's 1 double bed) it is located in the city center, in a calm traditional residential area near city´s main Avenue - 3 minutes walk from Sacré Coeur.</p>
+    <br>
+    <table class="table">
+      <tbody>
+        <tr>
+          <td>Space</td>
+          <td>
+            <ul class="list-unstyled">
+              <li class="list-item> Accommodates: <strong>2</strong></li>
+              <li class="list-item"> Bathrooms: <strong>1</strong></li>
+              <li class="list-item"> Bedrooms: <strong>1</strong></li>
+            </ul>
+          </td>
+          <td>
+            <ul class="list-unstyled">
+              <li class="list-item"> Property type: <strong>appartment</strong></li>
+              <li class="list-item"> Room type: <strong>entire appartment</strong></li>
+            </ul>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
